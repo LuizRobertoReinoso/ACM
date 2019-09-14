@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Acme.Common;
 
 namespace ACM.BL.Customer.Model
 {
-    public class Customer : EntityBase.EntityBase
+    public class Customer : EntityBase.EntityBase, ILoggable
     {
         public Customer() : this(0)
         {
@@ -27,5 +28,8 @@ namespace ACM.BL.Customer.Model
             !string.IsNullOrWhiteSpace(LastName) && !string.IsNullOrWhiteSpace(EmailAddress);
 
         public override string ToString() => FullName;
+
+        public string Log() =>
+            $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntityState.ToString()}";
     }
 }

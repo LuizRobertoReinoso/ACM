@@ -7,17 +7,11 @@ namespace Acme.CommonTest
     public class StringHandlerTest
     {
         [Fact]
-        public void InsertSpacesTestValid()
-        {
-            var handler = new StringHandler();
-            handler.InsertSpaces("ProdutoJunto").Should().Be("Produto Junto");
-        }
+        public void InsertSpacesTestValid() =>
+            "ProdutoJunto".InsertSpaces().Should().Be("Produto Junto");
 
         [Fact]
-        public void InsertSpacesTestWithExistingSpace()
-        {
-            var handler = new StringHandler();
-            handler.InsertSpaces("Produto Separado").Should().Be("Produto Separado");
-        }
+        public void InsertSpacesTestWithExistingSpace() =>
+            "Produto Separado".InsertSpaces().Should().Be("Produto Separado");
     }
 }
