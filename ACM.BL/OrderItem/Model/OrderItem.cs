@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ACM.BL.OrderItem.Model
 {
-    class OrderItem
+    public class OrderItem
     {
+        public OrderItem()
+        {
+            
+        }
+
+        public OrderItem(int orderItemId)
+        {
+            OrderItemId = orderItemId;
+        }
+
+        public int OrderItemId { get; private set; }
+        public  int ProdutoId { get; set; }
+        public int Quantity { get; set; }
+        public decimal? PurchasePrice { get; set; }
+
+        public bool Validate() =>
+            Quantity > 0 && ProdutoId > 0 && PurchasePrice != null;
     }
 }
