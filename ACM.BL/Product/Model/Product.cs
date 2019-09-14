@@ -16,7 +16,7 @@ namespace ACM.BL.Product.Model
 
         public int ProductId { get; private set; }
         public string ProductName { get; set; }
-        public string Description { get; set; }
+        public string ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; }
 
         public bool Validate() =>
