@@ -66,6 +66,7 @@
     <Compile Include="Address\Model\Address.cs" />
     <Compile Include="Address\Repository\AddressRepository.cs" />
     <Compile Include="Customer\Model\Customer.cs" />
+    <Compile Include="EntityBase\EntityBase.cs" />
     <Compile Include="OrderItem\Model\OrderItem.cs" />
     <Compile Include="OrderItem\Repository\OrderItemRepository.cs" />
     <Compile Include="Order\Model\Order.cs" />

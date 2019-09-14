@@ -26,5 +26,7 @@ namespace ACM.BL.Order.Model
 
         public bool Validate() =>
             OrderDate != null;
+
+        public override string ToString() => $"{OrderDate} {OrderId}";
     }
 }

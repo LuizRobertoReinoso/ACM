@@ -1,8 +1,7 @@
-﻿using System.Xml.Schema;
-
+﻿
 namespace ACM.BL.Product.Model
 {
-    public class Product
+    public class Product : EntityBase.EntityBase
     {
         public Product()
         {
@@ -19,7 +18,9 @@ namespace ACM.BL.Product.Model
         public string ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; }
 
-        public bool Validate() =>
+        public override bool Validate() =>  
             CurrentPrice != null && !string.IsNullOrWhiteSpace(ProductName);
+
+        public override string ToString() => ProductName;
     }
 }

@@ -25,5 +25,7 @@ namespace ACM.BL.Customer.Model
 
         public bool Validate() =>
             !string.IsNullOrWhiteSpace(LastName) && !string.IsNullOrWhiteSpace(EmailAddress);
+
+        public override string ToString() => FullName;
     }
 }
