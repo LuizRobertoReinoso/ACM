@@ -1,5 +1,5 @@
 ﻿
-namespace ACM.BL.Customer
+namespace ACM.BL.Customer.Model
 {
     public class Customer
     {

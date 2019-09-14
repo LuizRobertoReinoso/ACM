@@ -1,4 +1,3 @@
-using ACM.BL.Model;
 using FluentAssertions;
 using Xunit;
 
@@ -13,7 +12,7 @@ namespace ACM.BL.TESTS.Model
         [InlineData("Jesga", "Bento", "Jesga Bento")]
         public void TerNomeCompletoCorretamente(string nome, string sobrenome, string nomeCompleto)
         {
-            var customer = new Customer.Customer {FirstName = nome, LastName = sobrenome };
+            var customer = new Customer.Model.Customer {FirstName = nome, LastName = sobrenome };
             customer.FullName.Should().Be(nomeCompleto, $"Nome completo deveria ser {nomeCompleto}");
         }
 
@@ -21,34 +20,34 @@ namespace ACM.BL.TESTS.Model
         public void ConstarQuantidadeDeInstancias()
         {
             // ReSharper disable once UnusedVariable
-            var customer1 = new Customer.Customer
+            var customer1 = new Customer.Model.Customer
             {
                 FirstName="Luiz Roberto",
                 LastName = "Reinoso"
             };
-            Customer.Customer.InstanceCount += 1;
+            Customer.Model.Customer.InstanceCount += 1;
             // ReSharper disable once UnusedVariable
-            var customer2 = new Customer.Customer
+            var customer2 = new Customer.Model.Customer
             {
                 FirstName = "João Lucas",
                 LastName = "Farias"
             };
-            Customer.Customer.InstanceCount += 1;
+            Customer.Model.Customer.InstanceCount += 1;
             // ReSharper disable once UnusedVariable
-            var customer3 = new Customer.Customer
+            var customer3 = new Customer.Model.Customer
             {
                 FirstName = "Jesga",
                 LastName = "Bento"
             };
-            Customer.Customer.InstanceCount += 1;
+            Customer.Model.Customer.InstanceCount += 1;
 
-            Customer.Customer.InstanceCount.Should().Be(3, "Número de instancias é diferente de 3");
+            Customer.Model.Customer.InstanceCount.Should().Be(3, "Número de instancias é diferente de 3");
         }
 
         [Fact]
         public static void ValidateValid()
         {
-            var customer = new Customer.Customer
+            var customer = new Customer.Model.Customer
             {
                 LastName = "Reinoso",
                 EmailAddress = "luiz@sistemasbr.net"
@@ -60,7 +59,7 @@ namespace ACM.BL.TESTS.Model
         [Fact]
         public static void ValidateMissingLastName()
         {
-            var customer = new Customer.Customer
+            var customer = new Customer.Model.Customer
             {
                 EmailAddress = "luiz@sistemasbr.net"
             };
