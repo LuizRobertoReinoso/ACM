@@ -15,8 +15,19 @@ namespace ACM.BL.Product.Repository
             return new Model.Product(productId);
         }
 
-        public bool Save()
+        public bool Save(Model.Product product)
         {
+            if (!product.HasChanges) return true;
+
+            if (!product.IsValid) return false;
+            if (product.IsNew)
+            {
+                //Insert
+            }
+            else
+            {
+                //Update
+            }
 
             return true;
         }

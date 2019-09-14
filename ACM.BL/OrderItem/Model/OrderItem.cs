@@ -1,7 +1,7 @@
 ﻿
 namespace ACM.BL.OrderItem.Model
 {
-    public class OrderItem
+    public class OrderItem : EntityBase.EntityBase
     {
         public OrderItem()
         {
@@ -18,7 +18,7 @@ namespace ACM.BL.OrderItem.Model
         public int Quantity { get; set; }
         public decimal? PurchasePrice { get; set; }
 
-        public bool Validate() =>
+        public override bool Validate() =>
             Quantity > 0 && ProdutoId > 0 && PurchasePrice != null;
     }
 }

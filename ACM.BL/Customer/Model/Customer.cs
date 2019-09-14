@@ -2,7 +2,7 @@
 
 namespace ACM.BL.Customer.Model
 {
-    public class Customer
+    public class Customer : EntityBase.EntityBase
     {
         public Customer() : this(0)
         {
@@ -23,7 +23,7 @@ namespace ACM.BL.Customer.Model
 
         public static int InstanceCount { get; set; }
 
-        public bool Validate() =>
+        public override bool Validate() =>
             !string.IsNullOrWhiteSpace(LastName) && !string.IsNullOrWhiteSpace(EmailAddress);
 
         public override string ToString() => FullName;

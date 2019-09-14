@@ -15,8 +15,19 @@ namespace ACM.BL.Order.Repository
             return new Model.Order(orderId);
         }
 
-        public bool Save()
+        public bool Save(Model.Order order)
         {
+            if (!order.HasChanges) return true;
+
+            if (!order.IsValid) return false;
+            if (order.IsNew)
+            {
+                //Insert
+            }
+            else
+            {
+                //Update
+            }
 
             return true;
         }

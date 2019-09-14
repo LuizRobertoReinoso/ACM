@@ -25,5 +25,22 @@ namespace ACM.BL.Customer.Repository
                 };
             return new Customer.Model.Customer(customerId);
         }
+
+        public bool Save(Model.Customer customer)
+        {
+            if (!customer.HasChanges) return true;
+
+            if (!customer.IsValid) return false;
+            if (customer.IsNew)
+            {
+                //Insert
+            }
+            else
+            {
+                //Update
+            }
+
+            return true;
+        }
     }
 }

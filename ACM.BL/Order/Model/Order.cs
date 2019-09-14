@@ -1,11 +1,9 @@
-﻿
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 
 namespace ACM.BL.Order.Model
 {
-    public class Order
+    public class Order : EntityBase.EntityBase
     {
         public Order() : this(0)
         {
@@ -24,7 +22,7 @@ namespace ACM.BL.Order.Model
         public int ShippingAddressId { get; set; }
         public IList<OrderItem.Model.OrderItem> OrderItems { get; set; }
 
-        public bool Validate() =>
+        public override bool Validate() =>
             OrderDate != null;
 
         public override string ToString() => $"{OrderDate} {OrderId}";
