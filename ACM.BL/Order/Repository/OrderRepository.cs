@@ -1,12 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ACM.BL.Order.Repository
 {
-    class OrderRepository
+    public class OrderRepository
     {
+        public Model.Order Retrieve(int orderId)
+        {
+            if (10.Equals(orderId))
+                return new Model.Order(orderId)
+                {
+                    OrderDate = new DateTimeOffset(DateTime.Now.Year, 4, 14, 10, 00, 00,
+                        new TimeSpan(7, 0, 0))
+                };
+            return new Model.Order(orderId);
+        }
+
+        public bool Save()
+        {
+
+            return true;
+        }
     }
 }

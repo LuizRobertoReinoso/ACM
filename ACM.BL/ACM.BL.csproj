@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address\Model\Address.cs" />
+    <Compile Include="Address\Repository\AddressRepository.cs" />
     <Compile Include="Customer\Model\Customer.cs" />
     <Compile Include="OrderItem\Model\OrderItem.cs" />
     <Compile Include="OrderItem\Repository\OrderItemRepository.cs" />
